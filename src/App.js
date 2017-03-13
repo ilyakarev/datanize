@@ -5,7 +5,7 @@ import '../css/font-awesome.min.css';
 
 const session = {
         startTime: 1489390133   , // timestamp
-        endTime: 1489394933 // timestamp
+        endTime: 1489396533 // timestamp
     },
     commands = [{
         timestamp: 1489394933,// timestamp
@@ -83,20 +83,20 @@ const convertTimestamp = (timestamp)=>{
         hh = d.getHours(),
         h = hh,
         min = ('0' + d.getMinutes()).slice(-2),
-        ampm = 'AM',
+        ampm = 'am',
         time;
 
     if (hh > 12) {
         h = hh - 12;
-        ampm = 'PM';
+        ampm = 'pm';
     } else if (hh === 12) {
         h = 12;
-        ampm = 'PM';
+        ampm = 'pm';
     } else if (hh === 0) {
         h = 12;
     }
 
-    time = h + ':' + min + ' ' + ampm;
+    time = h + '.' + min+ampm;
     return time;
 };
 
@@ -123,6 +123,7 @@ class Command extends Component{
             <div  className={!!command.current?"cd-timeline-block active cssanimations cd-bounce-1":"cd-timeline-block"}>
                 <div className="cd-timeline-img cd-normal" onClick={(e)=>this.setCurrent(e)}>
                     <i className={"fa fa-"+command.commandType}></i>
+                    <span className="cd-date">{convertTimestamp(command.timestamp)}</span>
                 </div>
                 <div className="cd-timeline-content">
                     <h2>{command.commandName}</h2>
@@ -135,7 +136,6 @@ class Command extends Component{
                                 </span>:''}
                     </p>
                     {cnt>6?<span className={allNames?'hidden':''} onClick={(e) => this.sayNames(e)}>(and {cnt-6} more)</span>:''}
-                    <span className="cd-date">{convertTimestamp(command.timestamp)}</span>
                 </div>
             </div>
         )
@@ -163,10 +163,11 @@ class App extends Component {
             <div>
                 <section className="cd-container app">
                     <div className="cd-timeline-block active">
-                        <div className="cd-timeline-img cd-end"></div>
+                        <div className="cd-timeline-img cd-end">
+                            <span className="cd-date">{convertTimestamp(session.endTime)}</span>
+                        </div>
                         <div className="cd-timeline-content --simple">
                             <p>{'Class session ended'}</p>
-                            <span className="cd-date">{convertTimestamp(session.endTime)}</span>
                         </div>
                     </div>
 
@@ -175,10 +176,11 @@ class App extends Component {
                     )}
 
                     <div className="cd-timeline-block active">
-                        <div className="cd-timeline-img cd-start"></div>
+                        <div className="cd-timeline-img cd-start">
+                            <span className="cd-date">{convertTimestamp(session.startTime)}</span>
+                        </div>
                         <div className="cd-timeline-content --simple">
                             <p>Class session started</p>
-                            <span className="cd-date">{convertTimestamp(session.startTime)}</span>
                         </div>
                     </div>
                 </section>
