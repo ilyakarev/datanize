@@ -95,6 +95,13 @@ header {
     font-size: 32px;
     color: #303e49;
     line-height: 60px; }
+  .cd-timeline-img .cd-date {
+    position: absolute;
+    left: -100px;
+    top: 19px;
+    font-size: 16px;
+    font-size: 1rem;
+    z-index: 1; }
 
 .hidden {
   display: none; }
@@ -191,17 +198,11 @@ header {
     font-size: 1rem; }
   .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
     display: inline-block; }
-  .cd-timeline-content .cd-date {
-    position: absolute;
-    width: 100%;
-    left: -205px;
-    top: 6px;
-    font-size: 16px;
-    font-size: 1rem;
-    z-index: 1; }
   .cd-timeline-content p {
     margin: .4em 0;
     line-height: 1.6; }
+    .cd-timeline-content p + span {
+      cursor: pointer; }
   .cd-timeline-content .cd-read-more {
     float: left;
     padding: .8em 1em;

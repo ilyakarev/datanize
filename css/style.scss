@@ -157,6 +157,13 @@ header {
     color: $color-1;
     line-height: 60px;
   }
+  .cd-date {
+    position: absolute;
+    left: -100px;
+    top: 19px;
+    @include font-size(16px);
+    z-index: 1;
+  }
 }
 
 .hidden{
@@ -248,18 +255,14 @@ header {
     display: inline-block;
   }
 
-  .cd-date {
-    position: absolute;
-    width: 100%;
-    left: -205px;
-    top: 6px;
-    @include font-size(16px);
-    z-index: 1;
-  }
+
 
   p {
     margin: .4em 0;
     line-height: 1.6;
+    &+span{
+      cursor: pointer;
+    }
   }
 
   .cd-read-more {
