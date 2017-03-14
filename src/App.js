@@ -58,6 +58,10 @@ const sortedStudents = {}; students.forEach((student)=>{
 const sortedTeachers = {}; teachers.forEach((teacher)=>{
     sortedTeachers[teacher.id]=teacher;
 });
+const compareNumeric = (a, b)=>{
+    if (a.timestamp < b.timestamp) return 1;
+    if (a.timestamp > b.timestamp) return -1;
+};
 const printNames = (arr)=>{
     let names = [];
     for(let i=0;i<6;i++){
@@ -100,8 +104,7 @@ const convertTimestamp = (timestamp)=>{
     return time;
 };
 
-let sortedCommands = _.sortBy(commands, [function(o) { return o.timestamp; }]);
-sortedCommands = sortedCommands.reverse();
+let sortedCommands = commands.sort(compareNumeric);
 
 class Command extends Component{
     constructor(props){
@@ -152,8 +155,7 @@ class App extends Component {
                 { ...item, current: true } :
                 { ...item, current: false }
         );
-        let sortedCommands = _.sortBy(newCommands, [function(o) { return o.timestamp; }]);
-        sortedCommands = sortedCommands.reverse();
+        let sortedCommands = newCommands.sort(compareNumeric);
         this.setState({commands: sortedCommands});
     }
     render() {
