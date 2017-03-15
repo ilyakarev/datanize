@@ -1,5 +1,5 @@
-Чтобы запустить: 
-1. нужно установить node.js 
-2. запустить npm install в корневой директории проекта 
-3. запустить npm start в корневой директории проекта 
-4. в браузере по-умолчанию должен открыться адрес: http://localhost:3000/
+To run: 
+1. install node.js 
+2. run `npm install` in command line in root directory of the project 
+3. run `npm start` in the root directory of the project 
+4. Done. should open: http://localhost:3000/
