@@ -57,13 +57,13 @@ header {
     color: #303e49;
     font-size: 24px;
     font-size: 1.5rem;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin-bottom: 0; }
 
 .app {
   position: relative;
-  padding: 2em 0;
-  margin-top: 3em;
-  margin-bottom: 3em; }
+  margin-top: 2em;
+  margin-bottom: 2em; }
   .app::before {
     /* this is the vertical line */
     content: '';
@@ -108,12 +108,14 @@ header {
 
 .cd-timeline-block {
   position: relative;
-  margin: 4em 0; }
+  margin: 2em 0; }
   .cd-timeline-block::after {
     clear: both;
     content: "";
     display: table; }
   .cd-timeline-block h2 {
+    font-size: 18px;
+    font-size: 1.125rem;
     margin-top: 10px;
     margin-bottom: 6px; }
   .cd-timeline-block:first-child {
@@ -174,7 +176,7 @@ header {
     background: #ffffff;
     border-radius: 0.25em;
     box-shadow: 0 3px 0 #d7e4ed;
-    padding: 0.1em 1.6em 1em; }
+    padding: 0.1em 1.6em 0.6em; }
     .cd-timeline-content:not(.--simple)::after {
       clear: both;
       content: "";
