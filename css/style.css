@@ -192,12 +192,14 @@ header {
       border-right: 7px solid #fff; }
   .cd-timeline-content.--simple p {
     line-height: 60px;
-    color: #303e49; }
+    color: #303e49;
+    font-size: 16px;
+    font-size: 1rem; }
   .cd-timeline-content h2 {
     color: #303e49; }
   .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
-    font-size: 16px;
-    font-size: 1rem; }
+    font-size: 14px;
+    font-size: 0.875rem; }
   .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
     display: inline-block; }
   .cd-timeline-content p {
